@@ -1,22 +1,22 @@
-import random
-values = [-3, -5, -2, -12, 0, 15, 4, 7, 2]
-a = random.randint(4, 8)
-b = random.randint(4, 8)
-matrix = []
-for i in range(a):
+import random # вариант 5, модуль который позволяет выбирать случайные числа
+values = [-3, -5, -2, -12, 0, 15, 4, 7, 2] # заданные значения
+a = random.randint(4, 8) # высота матрицы(строки)
+b = random.randint(4, 8) # ширина матрицы(столбцы)
+matrix = [] # создаем пустую матрицу
+for i in range(a): # заполняем строку случайными числами из values
     row = []
     for j in range(b):
-        row.append(random.choice(values))
-    matrix.append(row)
+        row.append(random.choice(values)) # добавляем эти числа в строку
+    matrix.append(row) # добавляем эту строку в матрицу
 print(f'Матрица {a} * {b}:\n')
 for row in matrix:
-    print(' '.join(map(str, row))) # преобразуем числа в строке в строки и пишем через пробелы
-sum_minus = 0
+    print(' '.join(map(str, row))) # преобразует числа в строке в строку и пишет через пробелы
+sum_minus = 0 # счетчик отрицательных элементов матрицы
 for i in range(a):
     for j in range(b):
-        if matrix[i][j] < 0:
-            sum_minus += matrix[i][j]
+        if matrix[i][j] < 0: # проходим по матрице и ищем отрицательные числа 
+            sum_minus += matrix[i][j] # если они есть, добавляем их в наш счетчик
 if sum_minus != 0:
-    print('Сумма всех отрицательных элементов:', sum_minus)
+    print('Сумма всех отрицательных элементов:', sum_minus) # выводим результат
 else:
-    print('Отрицательных элементов нет.')
+    print('Отрицательных элементов нет.') # иначе выводим что их нет

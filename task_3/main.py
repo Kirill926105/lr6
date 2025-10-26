@@ -1,12 +1,12 @@
-kolvo_lines = int(input('Введите количество строк: '))
-if kolvo_lines > 0:
-    lines = []
-    for i in range(kolvo_lines):
-        line = input(f'Строка {i + 1}: ')
-        lines.append(line)
-    text = ' '.join(lines)
-    words = text.split()
-    uniq_words = set(words)
-    print(f'Количество различных слов: {len(uniq_words)}')
+kolvo_lines = int(input('Введите количество строк: ')) # запрашиваем ввод
+if kolvo_lines > 0: # проверяем ввод количества строк на корректность
+    lines = [] # создаем пустой список
+    for i in range(kolvo_lines): # вводим строки до указаннного количества строк
+        line = input(f'Строка {i + 1}: ') 
+        lines.append(line) # после добавляем их в список lines
+    text = ' '.join(lines) # соединяем все строки в одну, вставляя между ними пробел
+    words = text.split() # разделяем строку на слова по пробелам
+    uniq_words = set(words) # превращаем в множество из списка слов, чтобы не было повторов слов
+    print(f'Количество различных слов: {len(uniq_words)}') # выводим результат
 else:
-    print('Строк должно быть больше 0.')
+    print('Строк должно быть больше 0.') # иначе выводим что их должно быть больше 0
